@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CnvInputComponent } from './cnv-input/cnv-input.component';
 import { CnvSelectComponent } from './cnv-select/cnv-select.component';
-import {NgSelectModule} from "@ng-select/ng-select";
+import { NgSelectModule } from "@ng-select/ng-select";
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import {NgSelectModule} from "@ng-select/ng-select";
     NgSelectModule
   ],
   exports: [
-    CnvInputComponent
+    CnvInputComponent,
+    CnvSelectComponent
   ]
 })
 export class FormsModule { }

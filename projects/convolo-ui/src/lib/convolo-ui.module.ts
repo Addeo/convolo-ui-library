@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ConvoloUiComponent } from './convolo-ui.component';
-import {FormsModule} from "./ui/forms/forms.module";
+import { FormsModule } from "./ui/forms/forms.module";
 
 
 

@@ -33,4 +33,8 @@ Standard what need to add:
   checking improvements and functionality
   storybook
   
-Command to deploy lib
+Command to deploy lib:
+ng build convolo-ui
+cd dist/convolo-ui
+npm publish
+

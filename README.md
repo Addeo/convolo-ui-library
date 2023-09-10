@@ -38,3 +38,7 @@ ng build convolo-ui
 cd dist/convolo-ui
 npm publish
 
+Add dependencies
+    "@angular/localize": "^16.2.4",
+    "@ng-select/ng-select": "^11.1.1",
+    "@types/intl-tel-input": "^18.1.1"

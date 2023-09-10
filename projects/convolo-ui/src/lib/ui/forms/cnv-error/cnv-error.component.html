@@ -1,0 +1,8 @@
+<span class="cnv-error__text" *ngIf="errorMessage; else errorMessages">
+    {{ errorMessage }}
+</span>
+<ng-template #errorMessages>
+    <span class="cnv-error__text" *ngFor="let error of errorTexts">
+        {{ error }}
+    </span>
+</ng-template>

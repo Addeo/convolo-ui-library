@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {ConvoloUiModule} from "../../projects/convolo-ui/src/lib/convolo-ui.module";
+import { HeadersComponent } from './pages/headers/headers.component';
+import { LayoutsComponent } from './pages/layouts/layouts.component';
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    ConvoloUiModule
+    ConvoloUiModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

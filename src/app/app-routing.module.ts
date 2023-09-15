@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
-    path: 'headers',
-    loadChildren: () => import('./pages/headers/headers.module').then((m) => m.HeadersModule),
+    path: 'pages',
+    loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
   },
   {
     path: 'layouts',
-    loadChildren: () => import('./pages/layouts/layouts.module').then((m) => m.LayoutsModule), }
+    loadChildren: () => import('./pages/layouts/layouts.module').then((m) => m.LayoutsModule),
+  }
 ];
 
 //TODO

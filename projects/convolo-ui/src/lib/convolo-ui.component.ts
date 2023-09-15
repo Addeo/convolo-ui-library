@@ -5,6 +5,7 @@ import {CssTokensService} from "./services/css-tokens/css-tokens.service";
   selector: 'cnv-ui',
   template: `
     <div i18n>
+
       <ng-content />
     </div>
   `,

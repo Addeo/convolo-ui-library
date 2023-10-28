@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
-import { ConvoloUiComponent } from './convolo-ui.component';
+import { AlfaUiComponent } from './alfa-ui.component';
 import { FormsModule } from "./ui/forms/forms.module";
 
 
 
 @NgModule({
   declarations: [
-    ConvoloUiComponent,
+    AlfaUiComponent,
   ],
   imports: [
     FormsModule
   ],
   exports: [
-    ConvoloUiComponent,
+    AlfaUiComponent,
     FormsModule
   ]
 })
-export class ConvoloUiModule { }
+export class AlfaUiModule { }

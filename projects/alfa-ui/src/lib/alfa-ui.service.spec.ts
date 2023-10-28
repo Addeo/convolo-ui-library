@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ConvoloUiService } from './convolo-ui.service';
+import { AlfaUiService } from './alfa-ui.service';
 
-describe('ConvoloUiService', () => {
-  let service: ConvoloUiService;
+describe('AlfaUiService', () => {
+  let service: AlfaUiService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ConvoloUiService);
+    service = TestBed.inject(AlfaUiService);
   });
 
   it('should be created', () => {

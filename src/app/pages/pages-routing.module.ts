@@ -1,8 +1,6 @@
 import { ActivatedRoute, CanActivate, Router, RouterModule, Routes } from '@angular/router';
 import { Injectable, NgModule } from '@angular/core';
 import {PagesComponent} from "./pages.component";
-import {LayoutsModule} from "./layouts/layouts.module";
-import {AnimationsModule} from "./animations/animations.module";
 
 
 const routes: Routes = [
@@ -22,6 +20,13 @@ const routes: Routes = [
             loadChildren: () =>
               import('./animations/animations.module').then(
                 (m) => m.AnimationsModule,
+              ),
+          },
+          {
+            path: 'ui',
+            loadChildren: () =>
+              import('./ui/ui.module').then(
+                (m) => m.UiModule,
               ),
           },
         ],

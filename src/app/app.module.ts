@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {ConvoloUiModule} from "../../projects/convolo-ui/src/lib/convolo-ui.module";
+import {AlfaUiModule} from "../../projects/alfa-ui/src/lib/alfa-ui.module";
 import { HeadersComponent } from './pages/headers/headers.component';
 import { LayoutsComponent } from './pages/layouts/layouts.component';
 import { AppRoutingModule } from "./app-routing.module";
@@ -13,7 +13,7 @@ import { AppRoutingModule } from "./app-routing.module";
   ],
   imports: [
     BrowserModule,
-    ConvoloUiModule,
+    AlfaUiModule,
     AppRoutingModule
   ],
   providers: [],

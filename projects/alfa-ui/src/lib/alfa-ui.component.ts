@@ -15,7 +15,7 @@ import {CssTokensService} from "./services/css-tokens/css-tokens.service";
     class: 'cnv-ui',
   },
 })
-export class ConvoloUiComponent {
+export class AlfaUiComponent {
   constructor(
     private cssTokensService: CssTokensService
   ) {

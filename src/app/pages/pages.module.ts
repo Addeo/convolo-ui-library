@@ -4,7 +4,7 @@ import {PagesComponent} from "./pages.component";
 import {RouterOutlet} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {PagesRoutingModule} from "./pages-routing.module";
-import {ConvoloUiModule} from "../../../projects/convolo-ui/src/lib/convolo-ui.module";
+import {AlfaUiModule} from "../../../projects/alfa-ui/src/lib/alfa-ui.module";
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import {ConvoloUiModule} from "../../../projects/convolo-ui/src/lib/convolo-ui.m
     ReactiveFormsModule,
     RouterOutlet,
     PagesRoutingModule,
-    ConvoloUiModule
+    AlfaUiModule
   ],
     declarations: [
         PagesComponent,

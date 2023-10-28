@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConvoloUiComponent } from './convolo-ui.component';
+import { AlfaUiComponent } from './alfa-ui.component';
 
-describe('ConvoloUiComponent', () => {
-  let component: ConvoloUiComponent;
-  let fixture: ComponentFixture<ConvoloUiComponent>;
+describe('AlfaUiComponent', () => {
+  let component: AlfaUiComponent;
+  let fixture: ComponentFixture<AlfaUiComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ConvoloUiComponent]
+      declarations: [AlfaUiComponent]
     });
-    fixture = TestBed.createComponent(ConvoloUiComponent);
+    fixture = TestBed.createComponent(AlfaUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

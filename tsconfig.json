@@ -4,8 +4,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "convolo-ui": [
-        "dist/convolo-ui"
+      "alfa-ui": [
+        "dist/alfa-ui"
       ]
     },
     "outDir": "./dist/out-tsc",

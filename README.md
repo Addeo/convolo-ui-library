@@ -35,8 +35,8 @@ Standard what need to add:
   storybook
   
 Command to deploy lib:
-ng build convolo-ui
-cd dist/convolo-ui
+ng build alfa-ui
+cd dist/alfa-ui
 npm publish
 
 Add dependencies

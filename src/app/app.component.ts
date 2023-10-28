@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CssTokensService} from "../../projects/convolo-ui/src/lib/services/css-tokens/css-tokens.service";
+import {CssTokensService} from "../../projects/alfa-ui/src/lib/services/css-tokens/css-tokens.service";
 
 @Component({
   selector: 'app-root',

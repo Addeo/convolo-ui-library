@@ -1,5 +1,5 @@
 {
-  "name": "alfa-ui-conv",
+  "name": "alfa-ui",
   "version": "0.0.8",
   "peerDependencies": {
     "@angular/animations": "^16.2.0",

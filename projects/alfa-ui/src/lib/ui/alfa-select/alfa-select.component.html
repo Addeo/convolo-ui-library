@@ -1,0 +1,63 @@
+<div [class]="isLeftLabel ? 'alfa-select-wrapper left-side' : 'alfa-select-wrapper'">
+<!--  [compareWith]="compareWith"-->
+<!--  [groupBy]="groupBy"-->
+<!--  [isOpen]="isOpen"-->
+<!--  [placeholder]="placeholder"-->
+<!--  [typeahead]="typeahead"-->
+<!--  [appendTo]="appendTo"-->
+  <ng-select
+    #ngSelect
+    [addTag]="addTag"
+
+    [bindLabel]="bindLabel"
+    [bindValue]="bindValue ?? 'id'"
+    [clearable]="clearable"
+    [closeOnSelect]="(closeOnSelect ?? !!addTag) || !multiple"
+
+    [disabled]="disabled"
+    [editableSearchTerm]="editableSearchTerm"
+
+    [items]="ngsItems"
+    [keyDownFn]="keyDownHandler"
+    [labelForId]="id"
+    [loading]="loading || false"
+    [multiple]="multiple"
+
+    [searchable]="searchable"
+    [selectOnTab]="selectOnTab"
+    [placeholder]="placeholder"
+    [virtualScroll]="virtualScroll"
+    [dropdownPosition]="dropdownPosition"
+    [(ngModel)]="value"
+    [clearSearchOnAdd]="clearSearchOnAdd"
+    (change)="onChangeModel($event)"
+    (close)="onClose()"
+    (mousedown)="onMouseDown($event)"
+    (open)="onOpen()"
+    (scrollToEnd)="onScrollToEnd()"
+    (search)="onSearch($event)"
+    (add)="addEvent($event)">
+    <ng-template *ngIf="labelTemplate" ng-label-tmp let-item="item">
+      <ng-template
+        [ngTemplateOutlet]="labelTemplate"
+        [ngTemplateOutletContext]="{ item: item }"
+      ></ng-template>
+    </ng-template>
+  </ng-select>
+  <label *ngIf="label" class="alfa-select__label" [for]="id">
+    <div>
+      {{ label }}
+    </div>
+<!--    <alfa-icon-->
+<!--      *ngIf="helpTooltip"-->
+<!--      cnvTooltip-->
+<!--      tooltipDirection="right"-->
+<!--      [tooltipText]="helpTooltip"-->
+<!--      aria-label="Help information"-->
+<!--      name="info"-->
+<!--      color="var(&#45;&#45;alfa-color-neutral-500)"-->
+<!--      [size]="16"-->
+<!--      class="alfa-input__label-icon"-->
+<!--    />-->
+  </label>
+</div>

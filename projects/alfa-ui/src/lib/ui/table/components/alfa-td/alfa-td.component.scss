@@ -1,0 +1,46 @@
+.alfa-td {
+  //@include headline-6;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  --alfa-flex-param: 1;
+
+  position: relative;
+  box-sizing: border-box;
+  padding: 16px;
+  color: var(--alfa-color-neutral-black);
+  background-color: var(--alfa-color-neutral-white);
+
+  .alfa-table_mode_table & {
+    display: table-cell;
+    overflow-wrap: break-word;
+    vertical-align: top;
+  }
+
+  .alfa-table_mode_flex & {
+    flex: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .alfa-table_border & {
+    background: transparent;
+  }
+
+  &:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    flex: var(--alfa-flex-param);
+  }
+
+  &:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+.firstChild-displayFlex {
+  &:first-child {
+    display: flex;
+    align-items: center;
+  }
+}

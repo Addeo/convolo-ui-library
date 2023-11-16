@@ -1,0 +1,22 @@
+<button
+              type="button"
+               (click)="openPreview()">
+  посмотреть
+</button>
+
+<ng-template #previewModal>
+  <div>
+    <header>
+      <div>
+        {{title}}
+      </div>
+      <div>
+        <button>распечатать</button>
+      </div>
+    </header>
+    <section>
+      <img [src]="src" alt="Документ">
+    </section>
+    <footer></footer>
+  </div>
+</ng-template>

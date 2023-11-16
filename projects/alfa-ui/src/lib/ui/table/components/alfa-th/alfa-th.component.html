@@ -1,0 +1,10 @@
+<div [ngClass]="checkbox ? 'alfa-th__content checkbox' : 'alfa-th__content'">
+    <ng-content />
+    <button
+        *ngIf="sortable || sortableManual"
+        class="alfa-th__sort-button"
+        type="button"
+        aria-label="Sort"
+        (click)="sort()"
+    ></button>
+</div>

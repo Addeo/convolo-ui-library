@@ -12,7 +12,7 @@ import {AnimationsRoutingModule} from "./animations-routing.module";
     ScrubComponent
   ],
   imports: [
-    CommonModule,
+    // CommonModule,
     AnimationsRoutingModule
   ]
 })

@@ -1,0 +1,24 @@
+<ng-content />
+
+<ng-container
+    [ngSwitch]="mode"
+    *ngIf="(state | async) === 'loaded' && items.length === 0 && isShowNoData"
+>
+    <alfa-no-data *ngSwitchCase="'flex'" [chosenInterval]="chosedInterval"></alfa-no-data>
+
+    <tr *ngSwitchCase="'table'">
+        <td colspan="99">
+            <alfa-no-data [chosenInterval]="chosedInterval"></alfa-no-data>
+        </td>
+    </tr>
+</ng-container>
+
+<ng-container [ngSwitch]="mode" *ngIf="(state | async) === 'error'">
+    <alfa-error-state *ngSwitchCase="'flex'" (clickRefresh)="refresh()"></alfa-error-state>
+
+    <tr *ngSwitchCase="'table'">
+        <td colspan="99">
+            <alfa-error-state (clickRefresh)="refresh()"></alfa-error-state>
+        </td>
+    </tr>
+</ng-container>

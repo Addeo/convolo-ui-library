@@ -1,0 +1,145 @@
+<div [class]="isLeftLabel ? 'alfa-input__wrapper left-side' : 'alfa-input__wrapper'">
+  <alfa-error
+    *ngIf="errorState"
+    class="alfa-input__error"
+    [errorMessage]="errorMessage ?? ''"
+    [errorMessages]="errorMessages"
+    [validationErrors]="validationErrors"
+  />
+
+<!--  <alfa-icon-->
+<!--    class="alfa-input__icon alfa-input__icon_prefix"-->
+<!--    *ngIf="prefixIcon"-->
+<!--    [name]="prefixIcon"-->
+<!--    size="var(&#45;&#45;icon-size)"-->
+<!--    color="var(&#45;&#45;icon-color-prefix)"-->
+<!--  />-->
+
+<!--  <alfa-icon-->
+<!--    class="alfa-input__icon alfa-input__icon_suffix"-->
+<!--    *ngIf="suffixIcon"-->
+<!--    [name]="suffixIcon"-->
+<!--    size="var(&#45;&#45;icon-size)"-->
+<!--    color="var(&#45;&#45;icon-color-suffix)"-->
+<!--  />-->
+
+<!--  [cnvMaskDate]="maskDate"-->
+<!--  [cnvMaskSettings]="maskSettings"-->
+  <input
+    *ngIf="maskDate && !maskNumber && !mask"
+    #input
+    type="text"
+    [id]="id"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    [attr.readonly]="readonly || undefined"
+    [placeholder]="!readonly ? placeholder : ''"
+
+    [attr.maxlength]="maxLength"
+    [attr.autocomplete]="autocomplete"
+    [(ngModel)]="value"
+    (ngModelChange)="changeValue($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  />
+
+<!--  [cnvMaskNumber]="maskNumber"-->
+  <input
+    *ngIf="maskNumber && !maskDate && !mask"
+    #input
+    type="text"
+    [id]="id"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    [attr.readonly]="readonly || undefined"
+    [placeholder]="!readonly ? placeholder : ''"
+
+    [attr.maxlength]="maxLength"
+    [attr.autocomplete]="autocomplete"
+    [(ngModel)]="value"
+    (ngModelChange)="changeValue($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  />
+
+<!--  [cnvMask]="mask"-->
+<!--  [cnvMaskSettings]="maskSettings"-->
+  <input
+    *ngIf="mask && !maskDate && !maskNumber"
+    #input
+    type="text"
+    [id]="id"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    [attr.readonly]="readonly || undefined"
+    [placeholder]="!readonly ? placeholder : ''"
+
+    [attr.maxlength]="maxLength"
+    [attr.autocomplete]="autocomplete"
+    [(ngModel)]="value"
+    (ngModelChange)="changeValue($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  />
+
+  <input
+    *ngIf="!mask && !maskDate && !maskNumber"
+    #input
+    [id]="id"
+    [disabled]="disabled"
+    [readonly]="readonly"
+    [type]="inputType"
+    [placeholder]="!readonly ? placeholder : ''"
+    [attr.min]="min ? '' + min : null"
+    [attr.max]="max ? '' + max : null"
+    [attr.step]="step ? '' + step : null"
+    [attr.maxlength]="maxLength"
+    [attr.autocomplete]="autocomplete"
+    [(ngModel)]="value"
+    (input)="onInput($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  />
+
+  <label *ngIf="label" class="alfa-input__label" [for]="id">
+    <div class="alfa-input__label-container">
+      {{ label }}
+<!--      <alfa-icon-->
+<!--        *ngIf="helpTooltip"-->
+<!--        cnvTooltip-->
+<!--        tooltipDirection="right"-->
+<!--        [tooltipText]="helpTooltip"-->
+<!--        aria-label="Help information"-->
+<!--        name="info"-->
+<!--        color="var(&#45;&#45;alfa-color-neutral-500)"-->
+<!--        [size]="16"-->
+<!--        class="alfa-input__label-icon"-->
+<!--      />-->
+    </div>
+  </label>
+
+<!--  <button-->
+<!--    *ngIf="suffixButton"-->
+<!--    class="alfa-input__button"-->
+<!--    type="button"-->
+<!--    [attr.disabled]="disabled ? '' : null"-->
+<!--    (click)="onSuffixButtonClick()"-->
+<!--  >-->
+<!--    <alfa-icon [name]="suffixButton" size="var(&#45;&#45;icon-size)" color="var(&#45;&#45;button-color)" />-->
+<!--  </button>-->
+
+  <button
+    *ngIf="clearable && value"
+    class="alfa-input__button alfa-input-clear"
+    type="button"
+    (click)="onClearClick()"
+  ></button>
+</div>
+
+<!--<span-->
+<!--  *ngIf="helperText"-->
+<!--  [class]="isLeftLabel ? 'alfa-input__helper-text left-side' : 'alfa-input__helper-text'"-->
+<!--&gt;-->
+<!--    {{ helperText | cnvTranslate | async }}-->
+<!--</span>-->
+

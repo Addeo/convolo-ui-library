@@ -1,0 +1,21 @@
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374 274">
+    <rect x="154.5" y="169.5" width="218" height="38" rx="1.5" stroke="#a0c3f9" stroke-width="3"
+          stroke-dasharray="10 10"/>
+    <rect x="154.5" y="113.5" width="218" height="38" rx="1.5" stroke="#a0c3f9" stroke-width="3"
+          stroke-dasharray="10 10"/>
+    <rect x="154.5" y="57.5" width="218" height="38" rx="1.5" stroke="#a0c3f9" stroke-width="3"
+          stroke-dasharray="10 10"/>
+    <rect x="154.5" y="1.5" width="218" height="38" rx="1.5" stroke="#a0c3f9" stroke-width="3"
+          stroke-dasharray="10 10"/>
+    <rect y="30" width="244" height="244" rx="8" fill="#e5f0ff"/>
+    <path d="M0 38a8 8 0 0 1 8-8h228a8 8 0 0 1 8 8v12.333H0V38Z" fill="#a0c3f9"/>
+    <circle cx="10.167" cy="40.167" r="2.033" fill="#fafafa"/>
+    <circle cx="15.86" cy="40.167" r="2.033" fill="#fafafa"/>
+    <circle cx="21.553" cy="40.167" r="2.033" fill="#fafafa"/>
+    <rect x="40" y="138" width="49" height="49" rx="24.5" fill="#ff6a6d"/>
+    <path
+        d="M65 167.659c-.847 0-1.694-.635-1.906-1.694l-.635-8.894v-5.718c0-1.271.847-2.118 2.117-2.118h.848c1.27 0 2.117.847 2.117 2.118v5.718l-.635 8.894c-.212.847-.847 1.694-1.906 1.694Zm-.424 9.106c-1.27 0-2.117-.847-2.117-2.118v-1.906c0-1.27.847-2.117 2.117-2.117h1.06c1.27 0 2.117.847 2.117 2.117v1.906c0 1.271-.847 2.118-2.118 2.118h-1.059Z"
+        fill="#fff"/>
+    <rect x="109" y="152" width="87.19" height="7.264" rx="2" fill="#a0c3f9"/>
+    <rect x="109" y="166.527" width="63.213" height="7.264" rx="2" fill="#a0c3f9"/>
+</svg>

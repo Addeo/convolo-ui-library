@@ -1,0 +1,51 @@
+<!--[focusableElement]="config.focusableElement"-->
+<div #modal class="alfa-modal__content" alfaFocusTrap >
+    <button
+        *ngIf="config.closeButton"
+        class="alfa-modal__close"
+        aria-label="CLose"
+        (click)="onClickClose()"
+    ></button>
+</div>
+
+<div #sheet class="sheet-buttons">
+    <div *ngIf="config.typeButtons === 'stepper'" class="buttons-group">
+        <div *ngIf="config.showBack || config.showNext" class="buttons_wrapper">
+            <button
+                *ngIf="config.showBack"
+                #prevButton
+                alfaButton
+                kind="secondary"
+                size="large"
+                [disabled]="config.backDisabled"
+                (click)="backClick()"
+            >
+              Back
+            </button>
+            <button
+                *ngIf="config.showNext"
+                #nextButton
+                alfaButton
+                kind="primary"
+                size="large"
+                [disabled]="config.nextDisabled"
+                (click)="nextClick()"
+            >
+              Next
+            </button>
+        </div>
+    </div>
+    <div *ngIf="config.typeButtons === 'save'" class="buttons-group">
+        <div *ngIf="config.showBack || config.showNext" class="buttons_wrapper">
+            <button
+                alfaButton
+                kind="primary"
+                size="large"
+                [disabled]="config.saveDisabled"
+                (click)="saveClick()"
+            >
+              Save
+            </button>
+        </div>
+    </div>
+</div>

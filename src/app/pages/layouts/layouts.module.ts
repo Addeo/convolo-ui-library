@@ -10,7 +10,7 @@ import {LayoutsRoutingModule} from "./layouts-routing.module";
     LayoutsComponent
   ],
   imports: [
-    CommonModule,
+    // CommonModule,
     LayoutsRoutingModule
   ],
   exports: [

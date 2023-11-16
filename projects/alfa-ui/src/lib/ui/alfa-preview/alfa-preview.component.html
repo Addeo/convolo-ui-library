@@ -1,0 +1,56 @@
+<!--<ng-container>-->
+<!--  <section-->
+<!--    #contentWrapper-->
+<!--    attributeFilter="src"-->
+<!--    characterData-->
+<!--    childList-->
+<!--    subtree-->
+<!--    class="t-wrapper"-->
+<!--    [class.t-not-interactive-content]="zoomable"-->
+<!--    [class.t-transitive]="transitioned$ | async"-->
+<!--    [style.cursor]="cursor$ | async"-->
+<!--    [style.transform]="wrapperTransform$ | async"-->
+<!--    (tuiPan)="onPan($event)"-->
+<!--    (tuiResize)="onResize($event)"-->
+<!--    (tuiZoom)="onZoom($event)"-->
+<!--    (waMutationObserver)="onMutation(contentWrapper)"-->
+<!--  >-->
+<!--    <ng-content></ng-content>-->
+<!--  </section>-->
+
+<!--  <header class="t-header">-->
+<!--    <div class="t-title">-->
+<!--      <ng-content select="tui-preview-title"></ng-content>-->
+<!--    </div>-->
+
+<!--    <ng-content select="tui-preview-pagination"></ng-content>-->
+
+<!--    <div class="t-actions">-->
+<!--      <ng-content select="[tuiPreviewAction]"></ng-content>-->
+<!--    </div>-->
+<!--  </header>-->
+
+<!--  <footer class="t-footer">-->
+<!--    <button-->
+<!--      *ngIf="rotatable"-->
+<!--      tuiHintAppearance="onDark"-->
+<!--      tuiHintDescribe-->
+<!--      tuiHintDirection="top-right"-->
+<!--      tuiIconButton-->
+<!--      tuiPreviewAction-->
+<!--      type="button"-->
+<!--      class="t-rotate-button"-->
+<!--      [icon]="icons.rotate"-->
+<!--      [tuiHint]="texts.rotate"-->
+<!--      (click)="rotate()"-->
+<!--    ></button>-->
+
+<!--    <tui-preview-zoom-->
+<!--      *ngIf="zoomable"-->
+<!--      [min]="minZoom"-->
+<!--      [value]="(zoom$ | async) || 1"-->
+<!--      (reset)="reset()"-->
+<!--      (valueChange)="setZoom($event)"-->
+<!--    ></tui-preview-zoom>-->
+<!--  </footer>-->
+<!--</ng-container>-->

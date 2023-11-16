@@ -1,0 +1,217 @@
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Inject,
+  Input,
+} from '@angular/core';
+// import {
+//   TUI_PREVIEW_ICONS,
+//   TuiPreviewIcons,
+// } from './alfa-preview-tokens';
+// import {
+//   ALWAYS_FALSE_HANDLER,
+//   tuiClamp,
+//   tuiDragAndDropFrom,
+//   TuiDragStage,
+//   tuiPx,
+//   tuiRound,
+//   tuiTypedFromEvent,
+//   TuiZoom,
+// } from '@taiga-ui/cdk';
+// import {tuiSlideInTop} from '@taiga-ui/core';
+import {BehaviorSubject, combineLatest, merge, Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
+const INITIAL_SCALE_COEF = 0.8;
+const EMPTY_COORDINATES: [number, number] = [0, 0];
+const ROTATION_ANGLE = 90;
+
+@Component({
+  selector: 'alfa-preview',
+  templateUrl: './preview.template.html',
+  styleUrls: ['./preview.style.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true
+  // animations: [tuiSlideInTop],
+})
+export class AlfaPreviewComponent {
+  // @Input()
+  // zoomable = true;
+  //
+  // @Input()
+  // rotatable = false;
+  //
+  // minZoom = 1;
+  //
+  // width = 0;
+  // height = 0;
+  //
+  // readonly zoom$ = new BehaviorSubject<number>(this.minZoom);
+  // readonly rotation$ = new BehaviorSubject<number>(0);
+  // readonly coordinates$ = new BehaviorSubject<readonly [number, number]>(
+  //   EMPTY_COORDINATES,
+  // );
+  //
+  // readonly transitioned$ = merge(
+  //   tuiDragAndDropFrom(this.el.nativeElement).pipe(
+  //     map(({stage}) => stage !== TuiDragStage.Continues),
+  //   ),
+  //   tuiTypedFromEvent(this.el.nativeElement, 'touchmove', {
+  //     passive: true,
+  //   }).pipe(map(ALWAYS_FALSE_HANDLER)),
+  //   tuiTypedFromEvent(this.el.nativeElement, 'wheel', {passive: true}).pipe(
+  //     map(ALWAYS_FALSE_HANDLER),
+  //   ),
+  // );
+  //
+  // readonly cursor$ = tuiDragAndDropFrom(this.el.nativeElement).pipe(
+  //   map(({stage}) => (stage === TuiDragStage.Continues ? 'grabbing' : 'initial')),
+  //   startWith('initial'),
+  // );
+  //
+  // readonly wrapperTransform$ = combineLatest([
+  //   this.coordinates$.pipe(map(([x, y]) => `${tuiPx(x)}, ${tuiPx(y)}`)),
+  //   this.zoom$,
+  //   this.rotation$,
+  // ]).pipe(
+  //   map(
+  //     ([translate, zoom, rotation]) =>
+  //       `translate(${translate}) scale(${zoom}) rotate(${rotation}deg)`,
+  //   ),
+  // );
+  //
+  // constructor(
+  //   @Inject(ElementRef) private readonly el: ElementRef<HTMLElement>,
+  //   @Inject(TUI_PREVIEW_ICONS) readonly icons: TuiPreviewIcons,
+  // ) {}
+  //
+  // rotate(): void {
+  //   this.rotation$.next(this.rotation$.value - ROTATION_ANGLE);
+  // }
+  //
+  // onPan(delta: readonly [number, number]): void {
+  //   this.coordinates$.next(
+  //     this.getGuardedCoordinates(
+  //       this.coordinates$.value[0] + delta[0],
+  //       this.coordinates$.value[1] + delta[1],
+  //     ),
+  //   );
+  // }
+  //
+  // onMutation(contentWrapper: HTMLElement): void {
+  //   const {clientWidth, clientHeight} = contentWrapper;
+  //
+  //   this.refresh(clientWidth, clientHeight);
+  // }
+  //
+  // onZoom({clientX, clientY, delta}: TuiZoom): void {
+  //   if (this.zoomable) {
+  //     this.processZoom(clientX, clientY, delta);
+  //   }
+  // }
+  //
+  // onResize(contentResizeEntries: readonly ResizeObserverEntry[]): void {
+  //   if (contentResizeEntries.length === 0) {
+  //     return;
+  //   }
+  //
+  //   const {width, height} = contentResizeEntries[0].contentRect;
+  //
+  //   this.refresh(width, height);
+  // }
+  //
+  // reset(): void {
+  //   this.zoom$.next(this.minZoom);
+  //   this.coordinates$.next(EMPTY_COORDINATES);
+  // }
+  //
+  // setZoom(zoom: number): void {
+  //   this.zoom$.next(zoom);
+  //   const [x, y] = this.coordinates$.value;
+  //
+  //   this.coordinates$.next(this.getGuardedCoordinates(x, y));
+  // }
+  //
+  // private get offsets(): {offsetX: number; offsetY: number} {
+  //   const offsetX = ((this.zoom$.value - this.minZoom) * this.width) / 2;
+  //   const offsetY = ((this.zoom$.value - this.minZoom) * this.height) / 2;
+  //
+  //   return {offsetX, offsetY};
+  // }
+  //
+  // private calculateMinZoom(
+  //   contentHeight: number,
+  //   contentWidth: number,
+  //   boxHeight: number,
+  //   boxWidth: number,
+  // ): number {
+  //   const bigSize =
+  //     contentHeight > boxHeight * INITIAL_SCALE_COEF ||
+  //     contentWidth > boxWidth * INITIAL_SCALE_COEF;
+  //   const {clientHeight, clientWidth} = this.el.nativeElement;
+  //
+  //   return bigSize
+  //     ? tuiRound(
+  //       Math.min(
+  //         (clientHeight * INITIAL_SCALE_COEF) / contentHeight,
+  //         (clientWidth * INITIAL_SCALE_COEF) / contentWidth,
+  //       ),
+  //       2,
+  //     )
+  //     : 1;
+  // }
+  //
+  // private refresh(width: number, height: number): void {
+  //   this.width = width;
+  //   this.height = height;
+  //   this.minZoom = this.calculateMinZoom(
+  //     height,
+  //     width,
+  //     this.el.nativeElement.clientHeight,
+  //     this.el.nativeElement.clientWidth,
+  //   );
+  //   this.zoom$.next(this.minZoom);
+  //   this.coordinates$.next(EMPTY_COORDINATES);
+  //   this.rotation$.next(0);
+  // }
+  //
+  // private processZoom(clientX: number, clientY: number, delta: number): void {
+  //   const oldScale = this.zoom$.value;
+  //   const newScale = tuiClamp(oldScale + delta, this.minZoom, 2);
+  //
+  //   const center = this.getScaleCenter(
+  //     {clientX, clientY},
+  //     this.coordinates$.value,
+  //     this.zoom$.value,
+  //   );
+  //
+  //   const moveX = center[0] * oldScale - center[0] * newScale;
+  //   const moveY = center[1] * oldScale - center[1] * newScale;
+  //
+  //   this.zoom$.next(newScale);
+  //   this.coordinates$.next(
+  //     this.getGuardedCoordinates(
+  //       this.coordinates$.value[0] + moveX,
+  //       this.coordinates$.value[1] + moveY,
+  //     ),
+  //   );
+  // }
+  //
+  // private getGuardedCoordinates(x: number, y: number): readonly [number, number] {
+  //   const {offsetX, offsetY} = this.offsets;
+  //
+  //   // return [tuiClamp(x, -offsetX, offsetX), tuiClamp(y, -offsetY, offsetY)];
+  // }
+  //
+  // private getScaleCenter(
+  //   {clientX, clientY}: {clientX: number; clientY: number},
+  //   [x, y]: readonly [number, number],
+  //   scale: number,
+  // ): [number, number] {
+  //   return [
+  //     (clientX - x - this.el.nativeElement.offsetWidth / 2) / scale,
+  //     (clientY - y - this.el.nativeElement.offsetHeight / 2) / scale,
+  //   ];
+  // }
+}

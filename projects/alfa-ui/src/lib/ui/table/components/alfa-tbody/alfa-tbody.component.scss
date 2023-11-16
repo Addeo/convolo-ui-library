@@ -1,0 +1,24 @@
+.alfa-tbody {
+  &::before {
+    display: block;
+    text-indent: -9999px;
+    content: "\00a0";
+  }
+
+  .alfa-table_mode_table & {
+    display: table-row-group;
+
+    &::before {
+      line-height: 5px;
+    }
+  }
+
+  .alfa-table_mode_flex & {
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      line-height: 15px;
+    }
+  }
+}

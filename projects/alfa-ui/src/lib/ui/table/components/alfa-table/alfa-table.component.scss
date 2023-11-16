@@ -1,0 +1,56 @@
+.alfa-table_mode_table {
+  display: table;
+  width: 100%;
+  margin-block: -5px;
+  border-spacing: 0 5px;
+    // padding-bottom: 40px;
+
+  .alfa-no-data {
+    // margin: 186px auto 20px;
+  }
+}
+
+.alfa-table_mode_flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .alfa-no-data {
+    align-self: center;
+    margin-top: 186px;
+    margin-bottom: 20px;
+  }
+}
+
+.alfa-table-wrapper {
+    margin-inline: -30px;
+    margin-bottom: -5px;
+    padding-inline: 30px;
+    padding-bottom: 5px;
+    overflow-x: auto;
+    overflow-y: clip;
+
+    &.padding-50 {
+        padding-bottom: 50px;
+    }
+}
+
+.alfa-table {
+  .alfa-checkbox {
+    width: fit-content;
+    // padding: 5px;
+    background-color: var(--alfa-color-neutral-100);
+    border-radius: 8px;
+  }
+
+  .alfa-td{
+    .alfa-checkbox {
+      padding: 5px;
+    }
+  }
+
+  .alfa-checkbox__label {
+    padding-left: 16px;
+    color: var(--alfa-color-neutral-600);
+  }
+}

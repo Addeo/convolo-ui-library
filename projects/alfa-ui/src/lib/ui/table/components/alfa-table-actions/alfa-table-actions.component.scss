@@ -1,0 +1,51 @@
+.alfa-table-actions {
+  position: fixed;
+  bottom: 15vh;
+  left: 50%;
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  color: var(--alfa-color-neutral-white);
+  //@include body-1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  background: var(--alfa-color-primary-800);
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px rgb(0 0 0 / 7%);
+  transform: translateX(-50%);
+}
+
+.alfa-table-actions__main {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.alfa-table-actions__close {
+  --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='m9.174 8 3.58-3.573a.836.836 0 0 0-1.182-1.182L8 6.825l-3.572-3.58a.836.836 0 1 0-1.182 1.182L6.826 8l-3.58 3.572a.833.833 0 0 0 .271 1.365.834.834 0 0 0 .911-.182L8 9.174l3.572 3.58a.834.834 0 0 0 1.364-.271.834.834 0 0 0-.182-.912L9.174 8Z'/%3E%3C/svg%3E");
+
+  width: 16px;
+  height: 16px;
+  margin-right: 25px;
+  padding: 0;
+  background: var(--icon) no-repeat center / 16px 16px;
+  border: 0;
+}
+
+.alfa-table-actions__buttons {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.alfa-table-actions__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}

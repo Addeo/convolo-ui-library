@@ -1,0 +1,11 @@
+<ng-container *ngIf="lazy; else eager">
+    <ng-container *ngIf="active">
+        <ng-container *ngTemplateOutlet="template" />
+    </ng-container>
+</ng-container>
+
+<ng-template #eager>
+    <ng-container *ngIf="active">
+        <ng-content />
+    </ng-container>
+</ng-template>

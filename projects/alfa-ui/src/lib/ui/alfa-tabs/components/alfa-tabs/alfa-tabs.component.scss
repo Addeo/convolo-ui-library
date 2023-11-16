@@ -1,0 +1,116 @@
+.alfa-tabs {
+    --alfa-tabs-under-line-bottom: -5px;
+    --alfa-tabs-content-padding: 24px;
+  display: block;
+
+    &-dynamic__content {
+        display: flex;
+        flex-grow: 1;
+        justify-content: end;
+    }
+
+
+.alfa-tabs__panel {
+    display: flex;
+    margin-block: 0;
+    padding-bottom: 10px;
+    padding-left: 0;
+    list-style: none;
+    &.wrap{
+        flex-wrap: wrap;
+        row-gap: 10px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--alfa-color-neutral-200);
+    }
+}
+
+.alfa-tabs__label {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    color: var(--alfa-color-light-silver);
+    //@include caption-2;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 14px;
+    text-transform: none;
+    background: none;
+    border: none;
+
+    &,
+    &[type="button"] {
+
+        &::-moz-focus-inner {
+            padding: 0;
+            border-style: none;
+        }
+
+        &:-moz-focusring {
+            outline: 1px dotted ButtonText;
+        }
+    }
+
+    &:hover {
+        color: var(--silder);
+    }
+
+    &[disabled] {
+        color: var(--alfa-color-neutral-300);
+        cursor: not-allowed;
+    }
+}
+
+.alfa-tabs__tab + .alfa-tabs__tab {
+    position: relative;
+    margin-left: 28px;
+    &.stepper{
+        &::before{
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: -20px;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background: url("./assets/vector.svg") no-repeat center top / contain;
+        }
+        .alfa-tabs__label {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.alfa-tabs__tab_active {
+
+    position: relative;
+    cursor: pointer;
+    &::before {
+        position: absolute;
+        right: 0;
+        bottom: var(--alfa-tabs-under-line-bottom);
+        left: 0;
+        height: 2px;
+        content: "";
+        background-color: var(--alfa-color-primary-800);
+        cursor: pointer;
+    }
+
+    &.stepper{
+        &::before{
+            background: url("./assets/vector-active.svg") no-repeat center top / contain !important;
+        }
+        .alfa-tabs__label {
+            cursor: pointer !important;
+        }
+    }
+
+    .alfa-tabs__label {
+        color: var(--alfa-color-primary-800);
+    }
+}
+
+.alfa-tabs__content {
+    padding-top: var(--alfa-tabs-content-padding);
+}
+
+}

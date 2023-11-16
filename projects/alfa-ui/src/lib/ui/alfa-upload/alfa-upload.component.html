@@ -1,0 +1,94 @@
+<div class="alfa-upload__header-text">
+    {{ label }}
+</div>
+
+<div
+    *ngIf="multiple || (!multiple && files.length === 0 && notIncludeValue.length === 0)"
+    class="alfa-upload-wrapper"
+>
+    <label
+        for="fileDropRef"
+        class="alfa-upload-container"
+        [class.loaded]="files.length !== 0 || (notIncludeValue && notIncludeValue.length > 0)"
+        alfaDragDrop
+        (fileDropped)="onFileDropped($event)"
+    >
+        <input
+            [disabled]="true"
+            #fileDropRef
+            type="file"
+            class="alfa-upload-input"
+            id="fileDropRef"
+            [multiple]="multiple"
+            (change)="fileBrowseHandler($event.target)"
+        />
+<!--        <Alfa-icon (click)="clickToUpload()" name="cloudsUpload" size="32" class="icon-clouds" />-->
+        <span class="alfa-upload-input-text">
+            {{
+                helperText
+                    ? helperText
+                    : multiple
+                    ? ('Drop files to upload or')
+                    : ('Drop file to upload or' )
+            }}
+            <span (click)="clickToUpload()" class="alfa-upload-input-link">browse</span>
+        </span>
+
+        <div *ngIf="notIncludeValue && notIncludeValue.length > 0" class="files-list">
+            <div class="single-file" *ngFor="let file of notIncludeValue">
+                <!--                <Alfa-icon size="30" name="xls"/>-->
+                <div class="info">
+                    <h4 class="name">
+                        {{ file | ellipsis: 30 }}
+                    </h4>
+                </div>
+                <button class="ng-value-icon" type="button" (click)="deleteValue(file)">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 7 7"
+                        width="7"
+                        height="7"
+                        fill="currentColor"
+                    >
+                        <path
+                            d="M5.6 6.7c.3.3.8.3 1.1 0s.3-.8 0-1.1L4.6 3.5l2.1-2.1C7 1.1 7 .6 6.6.3c-.3-.3-.7-.3-1 0L3.5 2.4 1.4.3C1.1 0 .6 0 .3.3s-.3.7 0 1l2.1 2.1L.3 5.6c-.3.3-.2.8.1 1.1.3.3.7.3 1 0l2.1-2.1 2.1 2.1z"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </label>
+</div>
+
+<div
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+    *ngIf="files && files.length > 0"
+    class="files-list"
+>
+    <div cdkDrag class="single-file" *ngFor="let file of files; let i = index">
+        <!--                <Alfa-icon size="30" name="xls"/>-->
+        <span class="info">
+            <span class="name">
+                {{ file.error ? 'error' : ('' | ellipsis: 30) }}
+                {{ file?.name | ellipsis: 30 }}
+            </span>
+            <!--                    <p class="size">-->
+            <!--                        {{ formatBytes(file?.size) }}-->
+            <!--                    </p>-->
+<!--            <Alfa-progress-->
+<!--                *ngIf="file?.progress && file?.progress !== 100"-->
+<!--                [progress]="file?.progress"-->
+<!--            />-->
+        </span>
+        <a [href]="file.url" target="_blank">
+<!--            <Alfa-icon size="14" name="upload"></Alfa-icon>-->
+        </a>
+<!--        <Alfa-icon-->
+<!--            class="upload-delete-icon"-->
+<!--            size="14"-->
+<!--            name="closeCircle"-->
+<!--            (click)="deleteFile(i)"-->
+<!--        ></Alfa-icon>-->
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<ul *ngIf="type === 'tabs'" [class]="wrap ? 'alfa-tabs__panel wrap' : 'alfa-tabs__panel'">
+    <li
+        *ngFor="let tab of tabs"
+        class="alfa-tabs__tab"
+        [class.alfa-tabs__tab_active]="activeTab === tab.name"
+        [class.alfa-tabs__tab_disabled]="tab.disabled"
+    >
+        <button
+            class="alfa-tabs__label"
+            type="button"
+            [disabled]="tab.disabled"
+            (click)="onTabChange(tab)"
+        >
+          {{ tab.label }}
+        </button>
+    </li>
+    <li class="alfa-tabs-dynamic__content">
+        <ng-content select="[button]" />
+    </li>
+</ul>
+
+<ul *ngIf="type === 'stepper'" [class]="wrap ? 'alfa-tabs__panel wrap' : 'alfa-tabs__panel'">
+    <li
+        *ngFor="let tab of tabs"
+        class="alfa-tabs__tab stepper"
+        [class.alfa-tabs__tab_active]="tab.activated"
+        [class.alfa-tabs__tab_disabled]="tab.disabled"
+    >
+        <button
+            class="alfa-tabs__label"
+            type="button"
+            [disabled]="tab.disabled"
+            (click)="onTabChange(tab)"
+        >
+          {{tab.label}}
+        </button>
+    </li>
+</ul>
+
+<div class="alfa-tabs__content">
+    <ng-content />
+</div>

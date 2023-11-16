@@ -1,0 +1,34 @@
+<div class="alfa-toast-container">
+    <div *ngIf="type && type" class="alfa-toast-icon-container">
+<!--        <alfa-icon-->
+<!--            *ngIf="type && type === 'error'"-->
+<!--            size="16"-->
+<!--            name="toastNotificationError"-->
+<!--        ></alfa-icon>-->
+
+<!--        <alfa-icon-->
+<!--            *ngIf="type && type === 'success'"-->
+<!--            size="16"-->
+<!--            name="toastNotificationSuccess"-->
+<!--        ></alfa-icon>-->
+
+<!--        <alfa-icon-->
+<!--            *ngIf="type && type === 'warning'"-->
+<!--            size="16"-->
+<!--            name="toastNotificationWarning"-->
+<!--        ></alfa-icon>-->
+
+<!--        <alfa-icon *ngIf="type && type === 'info'" size="16" name="toastNotificationInfo"></alfa-icon>-->
+    </div>
+
+    <div class="alfa-toast-description">
+        <div *ngIf="title" class="alfa-toast-title">{{ title }}</div>
+        <div *ngIf="message" class="alfa-toast-message">{{ message }}</div>
+    </div>
+
+    <div class="alfa-toast-close">
+<!--        <alfa-icon name="close" (click)="closeMe()"></alfa-icon>-->
+    </div>
+</div>
+<!--example use internationalization-->
+<!--<span i18n="@@routes.label.start-page"></span>-->

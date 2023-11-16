@@ -1,0 +1,8 @@
+<span class="alfa-error__text" *ngIf="errorMessage; else errorMessages">
+    {{ errorMessage }}
+</span>
+<ng-template #errorMessages>
+    <span class="alfa-error__text" *ngFor="let error of errorTexts">
+        {{ error }}
+    </span>
+</ng-template>

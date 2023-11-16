@@ -1,19 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CnvInputComponent } from './cnv-input/cnv-input.component';
-import { CnvSelectComponent } from './cnv-select/cnv-select.component';
-import { NgSelectModule } from "@ng-select/ng-select";
+import { AlfaFormSelectComponent } from './alfa-select/alfa-form-select.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { AlfaFormInputComponent } from './alfa-input/alfa-form-input.component';
 
 @NgModule({
-  declarations: [
-    CnvInputComponent,
-    CnvSelectComponent
-  ],
-  imports: [
-    NgSelectModule
-  ],
-  exports: [
-    CnvInputComponent,
-    CnvSelectComponent
-  ]
+    declarations: [AlfaFormInputComponent, AlfaFormSelectComponent],
+    imports: [NgSelectModule],
+    exports: [AlfaFormInputComponent, AlfaFormSelectComponent],
 })
-export class FormsModule { }
+export class FormsModule {}

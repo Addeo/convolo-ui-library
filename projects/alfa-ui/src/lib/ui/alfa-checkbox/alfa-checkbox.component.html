@@ -1,0 +1,14 @@
+<!--[id]="id"-->
+
+<input
+  #input
+  class="visually-hidden alfa-checkbox__input"
+  type="checkbox"
+  [disabled]="disabled"
+  [(ngModel)]="value"
+  (ngModelChange)="onCheckboxChange($event)"
+/>
+<!--[for]="id"-->
+<label class="alfa-checkbox__label" >
+  label
+</label>

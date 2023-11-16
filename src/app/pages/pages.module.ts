@@ -4,11 +4,11 @@ import {PagesComponent} from "./pages.component";
 import {RouterOutlet} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {PagesRoutingModule} from "./pages-routing.module";
-import {AlfaUiModule} from "../../../projects/alfa-ui/src/lib/alfa-ui.module";
+import {AlfaUiModule} from "alfa-ui";
 
 @NgModule({
   imports: [
-    CommonModule,
+    // CommonModule,
     FormsModule,
 
     ReactiveFormsModule,

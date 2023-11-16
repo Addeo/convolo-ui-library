@@ -21,10 +21,9 @@ import { takeUntil } from 'rxjs/operators';
  * ```
  */
 @Directive({
-    selector: '[cnvBaseComponent]',
+    selector: '[AlfaBaseComponent]',
     standalone: true,
 })
-// eslint-disable-next-line @angular-eslint/directive-class-suffix
 export class BaseComponent implements OnDestroy {
     private destroy: Subject<void> | undefined;
 

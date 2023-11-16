@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StartPageComponent } from './start-page.component';
+import {FormsModule} from "alfa-ui";
 
 
 
@@ -9,7 +10,8 @@ import { StartPageComponent } from './start-page.component';
     StartPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class StartPageModule { }

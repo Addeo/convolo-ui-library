@@ -1,0 +1,159 @@
+.alfa-toaster-message{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    max-width: 430px;
+    min-height: 102px;
+    background-color: var(--alfa-color-white);
+    z-index: 999;
+    border-radius: 16px;
+    box-shadow: 12px 12px 15px 0px #0000000D;
+    left: 300px;
+    animation: slide 0.5s forwards;
+
+
+    &.cnv_toaster_visible{
+        display: flex;
+    }
+
+
+    &.alfa-toaster_type__warning{
+        border: 1px solid var(--alfa-color-accent-2-800);
+
+        .alfa-toast-icon-container {
+            background-color: var(--alfa-color-accent-2-800-10);
+            color: var(--alfa-color-accent-2-800);
+        }
+
+    }
+
+    &.alfa-toaster_type__error{
+        border: 1px solid var(--alfa-color-accent-3-700);
+
+        .alfa-toast-icon-container {
+            background-color: var(--alfa-color-accent-3-700-10);
+            color: var(--alfa-color-accent-3-700);
+        }
+    }
+
+    &.alfa-toaster_type__info{
+        border: 1px solid var(--alfa-color-secondary-1-400);
+
+        .alfa-toast-icon-container {
+            background-color: var(--alfa-color-secondary-1-600-10);
+            color: var(--alfa-color-secondary-1-400);
+        }
+    }
+
+    &.alfa-toaster_type__none{
+        border: 1px solid var(--alfa-color-neutral-800);
+    }
+
+    &.alfa-toaster_type__success{
+        border: 1px solid var(--alfa-color-accent-1-800);
+
+        .alfa-toast-icon-container {
+            background-color: var(--alfa-color-accent-1-800-10);
+            color: var(--alfa-color-accent-1-800);
+        }
+
+    }
+
+    .alfa-toast {
+        &-description {
+            align-self: flex-start;
+            width: 100%;
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+
+        &-message {
+            font-weight: 400;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        &-close {
+            align-self: flex-start;
+            text-align: end;
+
+            svg {
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+            }
+        }
+    }
+    .alfa-toast-container{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 300px;
+    }
+
+    .alfa-toast-icon-container{
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        justify-content: center;
+        width: 2.5rem;
+        height: 1.5rem;
+        background-color: white;
+        border-radius: 8px;
+
+    }
+
+}
+
+.alfa-toast-wrapper.position-top-left .alfa-toaster-message {
+    left: -300px
+}
+
+.alfa-toast-wrapper.position-center .alfa-toaster-message {
+    left: 0;
+    animation: center 0.5s forwards;
+    top: -100px
+}
+
+.alfa-toast-wrapper {
+    display: none;
+    gap: 15px;
+    position: absolute;
+    z-index: 1000;
+    flex-direction: column-reverse;
+
+    &.active {
+        display: flex;
+    }
+
+    &.position-top-right {
+        top: 2%;
+        right: 2%;
+    }
+
+    &.position-top-left {
+        top: 2%;
+        left: 2%;
+    }
+
+    &.position-center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes slide {
+    100% { left: 0px; }
+}
+
+@keyframes center {
+    100% {
+        top: 0px;
+    }
+}

@@ -1,0 +1,19 @@
+.alfa-tr {
+  .alfa-table_mode_table & {
+    display: table-row;
+  }
+
+  .alfa-table_mode_flex & {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+
+  .alfa-table_border :not(.alfa-thead) & {
+    border-radius: 8px;
+    outline: 1px solid var(--alfa-color-neutral-300);
+    outline-offset: -1px;
+  }
+}

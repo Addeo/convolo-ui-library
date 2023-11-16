@@ -1,0 +1,19 @@
+.alfa-thead {
+  position: sticky;
+  top: 0;
+  //  todo check this case
+  //z-index: 1;
+
+  .alfa-table_mode_table & {
+    display: table-header-group;
+  }
+
+  .alfa-table_mode_flex & {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .alfa-checkbox__label {
+    padding-left: 11px;
+  }
+}

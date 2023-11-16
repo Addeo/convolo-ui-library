@@ -17,7 +17,7 @@ import {AlfaInputComponent} from "./ui/alfa-input/alfa-input.component";
 import {AlfaCheckboxComponent} from "./ui/alfa-checkbox/alfa-checkbox.component";
 import {AlfaButtonDirective} from "./ui/alfa-button";
 import {AlfaAbstractFormControl} from "./ui/abstract-control";
-
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -41,7 +41,8 @@ import {AlfaAbstractFormControl} from "./ui/abstract-control";
     AlfaInputComponent,
     AlfaCheckboxComponent,
     AlfaButtonDirective,
-    AlfaAbstractFormControl
+    AlfaAbstractFormControl,
+    NgSelectModule
   ],
   exports: [
     AlfaUiComponent,
